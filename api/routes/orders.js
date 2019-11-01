@@ -7,6 +7,8 @@ const Product = require('../models/product.js')
 router.get('/', (req, res, next) => {
     Order
         .find()
+        .select('product name quantity _id')
+        .populate('product')
         .exec()
         .then(response => {
             res.status(200).json({
