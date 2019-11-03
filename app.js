@@ -24,6 +24,8 @@ app.use((req, res, next) => {
 
 const productRoutes = require('./api/routes/products')
 const ordersRoutes = require('./api/routes/orders')
+const userRoutes = require('./api/routes/user')
+
 
 
 app.use(morgan('dev'))
@@ -37,6 +39,7 @@ app.use(bodyParser.json())
 
 app.use('/products', productRoutes)
 app.use('/orders', ordersRoutes)
+app.use('/user', userRoutes)
 
 
 app.use((req, res, next) => {
